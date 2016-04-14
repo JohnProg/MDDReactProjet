@@ -13,12 +13,16 @@ import React, {
 } from 'react-native';
 
 var MenuBar = require('./MenuBar');
+var Friends = require('./Friends');
+var MyAccount = require('./MyAccount');
 
 class TopBar extends Component {
   render() {
     return (
       <View style={styles.container}>
             <MenuBar name="MenuBar" />
+            <Friends name="Friends" />
+            <MyAccount name="MyAccount" />
       </View>
     );
   }
