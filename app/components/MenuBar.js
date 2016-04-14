@@ -9,16 +9,15 @@ import React, {
   Text,
   TextInput,
   TouchableHighlight,
+  Image,
   View
 } from 'react-native';
 
-var MenuBar = require('./MenuBar');
-
-class TopBar extends Component {
+class MenuBar extends Component {
   render() {
     return (
       <View style={styles.container}>
-            <MenuBar name="MenuBar" />
+            <Image source={require('../assets/menu-icon.png')} />
       </View>
     );
   }
@@ -27,12 +26,8 @@ class TopBar extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    backgroundColor: '#3D8491',
-    flexDirection: 'row',
-    alignItems: 'flex-start',
   },
 
 });
 
-module.exports = TopBar;
+module.exports = MenuBar;
