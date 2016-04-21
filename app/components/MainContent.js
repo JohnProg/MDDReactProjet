@@ -9,27 +9,72 @@ import React, {
   Text,
   TextInput,
   TouchableHighlight,
+  Image,
   View
 } from 'react-native';
 
 class MainContent extends Component {
+
+    constructor(props){
+    super(props);
+    this.state = {
+        id: "",
+        title: "",
+        image: "",
+        categories: ""
+        date: "",
+        desciption: ""
+    }
+}
+
+    onButtonPress(){
+       this.props.navigator.push({
+         id: 'Desciption',
+         title: 'Title Example',
+         image: 'Image Example',
+         categories: 'Categories',
+         date: 'Upcoming Date',
+         desciption: 'Desciption'
+       });
+     }
+
   render() {
     return (
       <View style={styles.container}>
-        <Text>
-            Main Content
-        </Text>
+          <TextInput style={styles.textField}
+              // <Image source={require('../assets/Search.png')} />
+              onChangeText={(text) => this.setState({text})}
+          />
+          <TouchableHighlight onPress={ this.onButtonPress.bind(this) }>
+            <Text>
+                This should hold the api information
+            </Text>
+          </TouchableHighlight>
+
+
       </View>
+
     );
   }
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 12,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#343535',
+  },
+  textField: {
+      width: 250,
+      height: 40,
+      borderColor: 'gray',
+      borderWidth: 1,
+      backgroundColor: '#fff',
+      borderRadius: 7,
+      marginLeft: 60,
+      fontSize: 18,
+      paddingLeft: 10,
   },
 });
 

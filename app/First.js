@@ -48,10 +48,7 @@ class First extends Component {
         <Text style={styles.tex}>
             Forgot Password?
         </Text>
-        <TouchableHighlight style={[styles.button]}
-        underlayColor='#1F4E66'
-        onPress={this.onLogin.bind(this)}
-        >
+        <TouchableHighlight style={[styles.button]} underlayColor='#1F4E66' onPress={this.onLogin.bind(this)}>
             <Text style={styles.buttonText}>
                 Log In
             </Text>

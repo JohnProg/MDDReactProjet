@@ -17,7 +17,7 @@ class Friends extends Component {
   render() {
     return (
       <View style={styles.container}>
-            <Image source={require('../assets/Friends.png')} />
+            <Image style={styles.image} source={require('../assets/Friends.png')} />
       </View>
     );
   }
@@ -26,6 +26,7 @@ class Friends extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    // paddingLeft: 20,
   },
 
 });

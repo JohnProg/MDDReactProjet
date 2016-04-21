@@ -16,11 +16,17 @@ var TopBar = require('./components/TopBar');
 var MainContent = require('./components/MainContent');
 
 class Home extends Component {
+    constructor(props) {
+       super(props)
+       this.state = {
+         text: 'Search'
+       }
+     }
   render() {
     return (
       <View style={styles.container}>
         <TopBar style={styles.topBar} name="TopBar"/>
-        <MainContent style={styles.Content} name="MainContent"/>
+        <MainContent style={styles.mainContent} name="MainContent"/>
       </View>
     );
   }
@@ -28,14 +34,8 @@ class Home extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'pink',
-  },
-  topBar: {
-      flex: 2,
-  },
-  content: {
-      flex: 7,
-  },
+      flex: 1,
+  }
 });
 
 module.exports = Home;

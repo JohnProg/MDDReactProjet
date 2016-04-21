@@ -12,7 +12,7 @@ import React, {
   View
 } from 'react-native';
 
-var MenuBar = require('./MenuBar');
+var MenuBarIcon = require('./MenuBarIcon');
 var Friends = require('./Friends');
 var MyAccount = require('./MyAccount');
 
@@ -20,7 +20,7 @@ class TopBar extends Component {
   render() {
     return (
       <View style={styles.container}>
-            <MenuBar name="MenuBar" />
+            <MenuBarIcon name="MenuBarIcon" />
             <Friends name="Friends" />
             <MyAccount name="MyAccount" />
       </View>
@@ -31,10 +31,10 @@ class TopBar extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: 'space-between',
     backgroundColor: '#3D8491',
     flexDirection: 'row',
-    alignItems: 'flex-start',
+    alignItems: 'flex-end',
   },
 
 });

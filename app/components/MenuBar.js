@@ -13,11 +13,33 @@ import React, {
   View
 } from 'react-native';
 
+var SignInState = require('./SignInState');
+var SignOutState = require('./SignOutState');
+
 class MenuBar extends Component {
+    constructor(props) {
+      super(props)
+      this.state = {
+        text: 'Sign In'
+      }
+    }
   render() {
     return (
       <View style={styles.container}>
-            <Image source={require('../assets/menu-icon.png')} />
+
+            <View>
+                <Text>
+                    Ani Fan
+                </Text>
+            </View>
+            <View>
+                <TouchableHighlight>
+                    <Text>
+                        {this.state}
+                    </Text>
+                </TouchableHighlight>
+            </View>
+
       </View>
     );
   }
@@ -26,6 +48,7 @@ class MenuBar extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+
   },
 
 });

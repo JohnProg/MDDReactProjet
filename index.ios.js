@@ -13,6 +13,7 @@ import React, {
 var First = require('./app/First');
 var Home = require('./app/Home');
 var Signup = require('./app/Signup');
+var Desciption = require('./app/components/Desciption');
 
 class AniFan extends Component {
   render() {
@@ -20,7 +21,7 @@ class AniFan extends Component {
     <Navigator
     style={styles.container}
         initialRoute={{
-            id: 'First'
+            id: 'Home'
         }}
         renderScene = { this.navigatorRenderScene }
     />
@@ -31,13 +32,16 @@ class AniFan extends Component {
       _navigator = navigator;
       switch (route.id) {
           case 'First':
-              return (<First navigator={navigator} title="First" />);
+              return (<First passProps={route.passProps} navigator={navigator} title="First" />);
 
           case 'Home':
-              return (<Home navigator={navigator} title="Home" />);
+              return (<Home passProps={route.passProps} navigator={navigator} title="Home" />);
 
           case 'Signup':
-              return (<Signup navigator={navigator} title="Signup" />);
+              return (<Signup passProps={route.passProps} navigator={navigator} title="Signup" />);
+
+          case 'Desciption':
+              return (<Desciption title={route.title} image={route.image}  categories={route.categories}  navigator={navigator} title="Desciption" />);
 
 
       }
