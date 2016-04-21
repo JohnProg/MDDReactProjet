@@ -41,7 +41,7 @@ class AniFan extends Component {
               return (<Signup passProps={route.passProps} navigator={navigator} title="Signup" />);
 
           case 'Desciption':
-              return (<Desciption title={route.title} image={route.image}  categories={route.categories}  navigator={navigator} title="Desciption" />);
+              return (<Desciption passProps={route.passProps}  navigator={navigator} title="Desciption" />);
 
 
       }

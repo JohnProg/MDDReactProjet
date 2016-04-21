@@ -21,31 +21,35 @@ class MainContent extends Component {
         id: "",
         title: "",
         image: "",
-        categories: ""
+        categories: "",
         date: "",
         desciption: ""
     }
 }
 
-    onButtonPress(){
+    animeDetails(){
        this.props.navigator.push({
          id: 'Desciption',
-         title: 'Title Example',
-         image: 'Image Example',
-         categories: 'Categories',
-         date: 'Upcoming Date',
-         desciption: 'Desciption'
+         passProps: {
+             title: 'Title Example',
+             image: 'Image Example',
+             categories: 'Categories',
+             date: 'Upcoming Date',
+             desciption: 'Desciption'
+         }
        });
      }
 
   render() {
     return (
       <View style={styles.container}>
-          <TextInput style={styles.textField}
-              // <Image source={require('../assets/Search.png')} />
-              onChangeText={(text) => this.setState({text})}
-          />
-          <TouchableHighlight onPress={ this.onButtonPress.bind(this) }>
+        <View tyle={styles.searchField}>    
+              <TextInput style={styles.textField}
+                  // <Image source={require('../assets/Search.png')} />
+                  onChangeText={(text) => this.setState({text})}
+              />
+          </View>
+          <TouchableHighlight onPress={ this.animeDetails.bind(this) }>
             <Text>
                 This should hold the api information
             </Text>
@@ -64,6 +68,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#343535',
+  },
+  searchField: {
+      flex: 1,
+      flexDirection: 'row',
+      alignItems: 'flex-start'
   },
   textField: {
       width: 250,
