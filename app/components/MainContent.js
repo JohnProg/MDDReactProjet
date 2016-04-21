@@ -34,7 +34,7 @@ class MainContent extends Component {
              title: 'Title Example',
              image: 'Image Example',
              categories: 'Categories',
-             date: 'Upcoming Date',
+             date: 'Date',
              desciption: 'Desciption'
          }
        });
@@ -43,18 +43,19 @@ class MainContent extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <View tyle={styles.searchField}>    
+          <View style={styles.searchField}>
               <TextInput style={styles.textField}
                   // <Image source={require('../assets/Search.png')} />
                   onChangeText={(text) => this.setState({text})}
               />
           </View>
-          <TouchableHighlight onPress={ this.animeDetails.bind(this) }>
-            <Text>
-                This should hold the api information
-            </Text>
-          </TouchableHighlight>
-
+          <View style={styles.content}>
+              <TouchableHighlight onPress={ this.animeDetails.bind(this) }>
+                <Text>
+                    This should hold the api information
+                </Text>
+              </TouchableHighlight>
+          </View>
 
       </View>
 
@@ -72,7 +73,11 @@ const styles = StyleSheet.create({
   searchField: {
       flex: 1,
       flexDirection: 'row',
-      alignItems: 'flex-start'
+      alignItems: 'flex-start',
+      paddingTop: 20,
+  },
+  content: {
+      flex: 1
   },
   textField: {
       width: 250,

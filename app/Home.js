@@ -26,7 +26,7 @@ class Home extends Component {
     return (
       <View style={styles.container}>
         <TopBar style={styles.topBar} name="TopBar"/>
-        <MainContent style={styles.mainContent} name="MainContent"/>
+        <MainContent style={styles.mainContent} name="MainContent" navigator= {this.props.navigator}/>
       </View>
     );
   }
