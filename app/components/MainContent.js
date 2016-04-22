@@ -51,8 +51,8 @@ class MainContent extends Component {
           </View>
           <View style={styles.content}>
               <TouchableHighlight onPress={ this.animeDetails.bind(this) }>
-                <Text>
-                    This should hold the api information
+                <Text style={styles.apiText}>
+                    This should Load the api information
                 </Text>
               </TouchableHighlight>
           </View>
@@ -76,6 +76,9 @@ const styles = StyleSheet.create({
       alignItems: 'flex-start',
       paddingTop: 20,
   },
+  apiText: {
+      fontFamily: 'Chewy',
+  },
   content: {
       flex: 1
   },
@@ -86,7 +89,6 @@ const styles = StyleSheet.create({
       borderWidth: 1,
       backgroundColor: '#fff',
       borderRadius: 7,
-      marginLeft: 60,
       fontSize: 18,
       paddingLeft: 10,
   },

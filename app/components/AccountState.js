@@ -7,21 +7,13 @@ import React, {
   TextInput
 } from 'react-native';
 
-class SignOutState extends Component {
+class AccountState extends Component {
 
-  constructor(props) {
-    super(props)
-    this.state = {
-      text: 'Sign In'
-    }
-  }
 
   render() {
     return (
       <View style={ styles.container }>
-        <Text style={ styles.largeText }>
-          { this.state.text }
-        </Text>
+          <Text style={styles.largeText}>{this.props.text}</Text>
       </View>
     );
   }
@@ -62,4 +54,4 @@ const styles = StyleSheet.create({
   },
 });
 
-module.exports = SignOutState;
+module.exports = AccountState;

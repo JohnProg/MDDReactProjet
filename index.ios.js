@@ -10,10 +10,17 @@ import React, {
   Navigator
 } from 'react-native';
 
-var First = require('./app/First');
+var Login = require('./app/Login');
 var Home = require('./app/Home');
 var Signup = require('./app/Signup');
+var Account = require('./app/Account');
+
+var MyAccount = require('./app/components/MyAccount');
+var TopBar = require('./app/components/TopBar');
+var MenuBarIcon = require('./app/components/MenuBarIcon');
+
 var Desciption = require('./app/components/Desciption');
+
 
 class AniFan extends Component {
   render() {
@@ -29,10 +36,10 @@ class AniFan extends Component {
   }
 
   navigatorRenderScene(route, navigator){
-      _navigator = navigator;
+      navigator = navigator;
       switch (route.id) {
-          case 'First':
-              return (<First passProps={route.passProps} navigator={navigator} title="First" />);
+          case 'Login':
+              return (<Login passProps={route.passProps} navigator={navigator} title="Login" />);
 
           case 'Home':
               return (<Home passProps={route.passProps} navigator={navigator} title="Home" />);
@@ -42,6 +49,18 @@ class AniFan extends Component {
 
           case 'Desciption':
               return (<Desciption passProps={route.passProps}  navigator={navigator} title="Desciption" />);
+
+          case 'Account':
+              return (<Account passProps={route.passProps}  navigator={navigator} title="Account" />);
+
+          case 'MyAccount':
+              return (<MyAccount passProps={route.passProps}  navigator={navigator} title="MyAccount" />);
+
+          case 'MenuBarIcon':
+              return (<MenuBarIcon passProps={route.passProps}  navigator={navigator} title="MenuBarIcon" />);
+
+          case 'TopBar':
+              return (<TopBar passProps={route.passProps}  navigator={navigator} title="TopBar" />);
 
 
       }

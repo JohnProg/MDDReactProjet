@@ -1,7 +1,4 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- */
+'use strict';
 
 import React, {
   Component,
@@ -12,13 +9,52 @@ import React, {
   View
 } from 'react-native';
 
-class First extends Component {
 
-    onLogin(){
-        this.props.navigator.push({
-            id: 'Home'
-        })
+import Button from './components/Button';
+import Signup from './Signup';
+import Account from './Account';
+import Firebase from 'firebase';
+
+let app = new Firebase("https://anifan.firebaseio.com/");
+
+class Login extends Component {
+
+    constructor(props){
+      super(props);
+      this.state = {
+        email: '',
+        password: '',
+        loaded: true
+      }
     }
+
+
+    login(){
+
+        this.setState({
+          loaded: false
+        });
+
+        app.authWithPassword({
+          "email": this.state.email,
+          "password": this.state.password
+        }, (error, user_data) => {
+
+          this.setState({
+            loaded: true
+          });
+
+          if(error){
+            alert('Login Failed. Please try again');
+          }else{
+            AsyncStorage.setItem('user_data', JSON.stringify(user_data));
+            this.props.navigator.push({
+              component: Home
+            });
+          }
+        });
+    }
+
     onSignup(){
         this.props.navigator.push({
             id: 'Signup'
@@ -36,19 +72,24 @@ class First extends Component {
         </Text>
         <TextInput
            style={styles.textField}
-           onChangeText={(text) => this.setState({text})}
+           onChangeText={(text) => this.setState({email: text})}
+           value={this.state.email}
+           placeholder={"Email Address"}
          />
         <Text style={[styles.headings]}>
           Password
         </Text>
         <TextInput
            style={styles.textField}
-           onChangeText={(text) => this.setState({text})}
+           onChangeText={(text) => this.setState({password: text})}
+           value={this.state.password}
+           secureTextEntry={true}
+           placeholder={"Password"}
          />
         <Text style={styles.tex}>
             Forgot Password?
         </Text>
-        <TouchableHighlight style={[styles.button]} underlayColor='#1F4E66' onPress={this.onLogin.bind(this)}>
+        <TouchableHighlight style={[styles.button]} underlayColor='#1F4E66' onPress={this.login.bind(this)}>
             <Text style={styles.buttonText}>
                 Log In
             </Text>
@@ -131,4 +172,17 @@ const styles = StyleSheet.create({
   },
 });
 
-module.exports = First;
+module.exports = Login;
+
+// <Button
+//     text="Login"
+//     button_styles={[styles.button, styles.signUp]}
+//     button_text_styles={styles.buttonText}
+//     onPress={this.login.bind(this)}
+// />
+// <Button
+//     text="Signup"
+//     button_styles={[styles.button, styles.signUp]}
+//     button_text_styles={styles.buttonText}
+//     onPress={this.onSignup.bind(this)}
+// />

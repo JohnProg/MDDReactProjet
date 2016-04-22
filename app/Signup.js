@@ -1,7 +1,4 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- */
+'use strict';
 
 import React, {
   Component,
@@ -9,16 +6,68 @@ import React, {
   Text,
   TextInput,
   TouchableHighlight,
-  View
+  View,
+  AsyncStorage
 } from 'react-native';
+
+import Button from './components/Button';
+import Login from './Login';
+import Firebase from 'firebase';
+
+let app = new Firebase("https://anifan.firebaseio.com/");
 
 class Signup extends Component {
 
-    onButtonPress(){
+    constructor(props){
+       super(props);
+
+       this.state = {
+         loaded: true,
+         email: '',
+         password: ''
+       };
+     }
+
+  signup(){
+
+    this.setState({
+      loaded: false
+    });
+
+    app.createUser({
+      'email': this.state.email,
+      'password': this.state.password
+    }, (error, userData) => {
+
+      if(error){
+        switch(error.code){
+
+          case "EMAIL_TAKEN":
+            alert("The new user account cannot be created because the email is already in use.");
+          break;
+
+          case "INVALID_EMAIL":
+            alert("The specified email is not a valid email.");
+          break;
+
+          default:
+            alert("Error creating user:");
+        }
+
+      }else{
         this.props.navigator.push({
-            id: 'Home'
-        })
-    }
+          component: Home
+        });
+      }
+
+      this.setState({
+        email: '',
+        password: '',
+      });
+
+    });
+
+  }
 
   render() {
     return (
@@ -31,30 +80,25 @@ class Signup extends Component {
         </Text>
         <TextInput
            style={styles.textField}
-           onChangeText={(text) => this.setState({text})}
+           onChangeText={(text) => this.setState({email: text})}
+           value={this.state.email}
+           placeholder={"Email Address"}
          />
         <Text style={[styles.headings]}>
           Password
         </Text>
         <TextInput
            style={styles.textField}
-           onChangeText={(text) => this.setState({text})}
+           onChangeText={(text) => this.setState({password: text})}
+           value={this.state.password}
+           secureTextEntry={true}
+           placeholder={"Password"}
          />
-         <Text style={[styles.headings]}>
-           Email
-         </Text>
-         <TextInput
-            style={styles.textField}
-            onChangeText={(text) => this.setState({text})}
-          />
-        <TouchableHighlight style={[styles.button]}
-        underlayColor='#1F4E66'
-        onPress={this.onButtonPress.bind(this)}
-        >
-            <Text style={styles.buttonText}>
-                Submit
-            </Text>
-        </TouchableHighlight>
+         <TouchableHighlight style={[styles.button]} underlayColor='#1F4E66' onPress={this.signup.bind(this)}>
+             <Text style={styles.buttonText}>
+                 Submit
+             </Text>
+         </TouchableHighlight>
       </View>
     );
   }
@@ -125,3 +169,11 @@ const styles = StyleSheet.create({
 });
 
 module.exports = Signup;
+
+// <Button
+//     text="Signup"
+//     button_styles={[styles.button]}
+//     button_text_styles={styles.buttonText}
+//     underlayColor='#1F4E66'
+//     onPress={this.signup.bind(this)}
+// />

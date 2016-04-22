@@ -14,10 +14,20 @@ import React, {
 } from 'react-native';
 
 class MyAccount extends Component {
+
+    onPush(){
+        this.props.navigator.push({
+            id: 'Account'
+        })
+    }
+
+
   render() {
     return (
       <View style={styles.container}>
+        <TouchableHighlight onPress={this.onPush.bind(this)}>
             <Image style={styles.image} source={require('../assets/Account.png')} />
+        </TouchableHighlight>
       </View>
     );
   }
