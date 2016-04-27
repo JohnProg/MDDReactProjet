@@ -16,16 +16,10 @@ var TopBar = require('./components/TopBar');
 var MainContent = require('./components/MainContent');
 
 class Home extends Component {
-    constructor(props) {
-       super(props)
-       this.state = {
-         text: 'Search'
-       }
-     }
   render() {
     return (
       <View style={styles.container}>
-        <TopBar style={styles.topBar} name="TopBar"/>
+        <TopBar style={styles.topBar} name="TopBar" navigator= {this.props.navigator}/>
         <MainContent style={styles.mainContent} name="MainContent" navigator= {this.props.navigator}/>
       </View>
     );

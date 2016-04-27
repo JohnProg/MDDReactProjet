@@ -13,6 +13,7 @@ import React, {
 import Button from './components/Button';
 import Login from './Login';
 import Firebase from 'firebase';
+import Home from './Home';
 
 let app = new Firebase("https://anifan.firebaseio.com/");
 
@@ -56,7 +57,7 @@ class Signup extends Component {
 
       }else{
         this.props.navigator.push({
-          component: Home
+          id: 'Login'
         });
       }
 

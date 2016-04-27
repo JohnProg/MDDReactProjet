@@ -6,6 +6,7 @@ import React, {
   Text,
   TextInput,
   TouchableHighlight,
+  AsyncStorage,
   View
 } from 'react-native';
 
@@ -14,6 +15,7 @@ import Button from './components/Button';
 import Signup from './Signup';
 import Account from './Account';
 import Firebase from 'firebase';
+import Home from './Home';
 
 let app = new Firebase("https://anifan.firebaseio.com/");
 
@@ -49,7 +51,7 @@ class Login extends Component {
           }else{
             AsyncStorage.setItem('user_data', JSON.stringify(user_data));
             this.props.navigator.push({
-              component: Home
+              id: 'Home'
             });
           }
         });

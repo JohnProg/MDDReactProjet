@@ -1,0 +1,92 @@
+{
+  "Hundred" : {
+    "categories" : "Action, Ecchi, Harem, Mecha, Romance, School, Sci-F",
+    "desciption" : "The \"ultimate school battle action\" science-fiction comedy begins with the Hundred, the only weapon that can counter the mysterious Savage life form attacking Earth. To become a Military Arts Master who wields this Hundred, the main character Hayato Kisaragi successfully enrolls in the marine academy city ship Little Garden. However …  \"I wanted to meet you, Hayato!!\"  \"W–who are you…?\"  Hayato feels a strange yet familiar sense of incongruity towards Emil Crossford, his roommate who somehow knows him from somewhere. On top of that, as soon as he enters the school, he is challenged to a duel by the \"Queen\" (the school's most powerful Military Arts Master) Claire Harvey.",
+    "title" : "Hundred",
+    "upcoming" : {
+      "EP" : {
+        "04" : {
+          "day" : 02,
+          "hours" : "07",
+          "minutes" : 45,
+          "seconds" : 23
+        }
+      }
+    }
+  },
+  "Sousei no Onmyouji?" : {
+    "categories" : "Action, Comedy, Romance ,Shounen, Supernatural",
+    "desciption" : "Grotesque monsters known as Impurities reside in Magano, a realm parallel to the present day. Exorcists purify these evil apparitions to protect the people. Rokuro Enmadou is opposed to becoming an exorcist, even though he has the talent to be one, but an oracle gives him the title of \"Twin Star Exorcist,\" the name bestowed upon married exorcists. Benio Adashino, the girl who receives the title along with Rokuro, is determined to exorcise all the Impurities in the world. The two find themselves wrapped up in more and more battles together as the Twin Star Exorcists, and as Rokuro watches Benio fight with the wish to become stronger, he's forced to face the weakness he's lived with ever since the Hiinatsuki Tragedy. Now that his eyes are turned toward the battle again, thanks to Benio, Rokuro makes up his mind to fight as an exorcist once more, and the Twin Star Exorcists take on the most powerful of Impurities together!",
+    "title" : "Sousei no Onmyouji",
+    "upcoming" : {
+      "EP" : {
+        "04" : {
+          "day" : 04,
+          "hours" : "06",
+          "minutes" : 57,
+          "seconds" : 34
+        }
+      }
+    }
+  },
+  "Seisen Cerberus: Ryuukoku no Fatalite" : {
+    "categories" : "Adventure, Fantasy, Magic",
+    "desciption" : "Sword and magic rule in the continent of Kuna'ahn. In this continent are three powerful nations: the Holy Kingdom of Amoria, the Kingdom of Ishilfen, and the Kingdom of Vanrodis, which share a delicate balance of power. Should disaster befall any one of the three nations, war would spread throughout the continent. Also residing there is the feared \"Evil Dragon\" Daganzord, an unstoppable force that leaves nothing but scorched land and destruction wherever he goes. Hiiro's parents, Bairo and Kismitete, joined other sorcerers in a magic ritual ten years ago in an attempt to seal Daganzord, but failed when someone interfered. The ritual would later become known as the "\Balbagoa Tragedy.\" After being rescued by Giruu, young Hiiro set out to learn swordsmanship so that he could avenge his parents. Now, ten years later, sixteen-year-old Hiiro leaves home on a journey to slay the Evil Dragon, and Giruu feels he has no choice but to accompany him. In the search for the Evil Dragon, Hiiro encounters people of various races who join in his quest to eliminate Daganzord... but will Hiiro really succeed in overcoming the destiny he took upon himself and defeating Daganzord?!",
+    "title" : "Seisen Cerberus: Ryuukoku no Fatalite",
+    "101" : {
+      "EP" : {
+        "04" : {
+          "day" : 02,
+          "hours" : "02",
+          "minutes" : 12,
+          "seconds" : 49
+        }
+      }
+    }
+  },
+  "Kuromukuro" : {
+    "categories" : "Action, Mecha",
+    "desciption" : "Grotesque monsters known as Impurities reside in Magano, a realm parallel to the present day. Exorcists purify these evil apparitions to protect the people. Rokuro Enmadou is opposed to becoming an exorcist, even though he has the talent to be one, but an oracle gives him the title of \"Twin Star Exorcist,\" the name bestowed upon married exorcists. Benio Adashino, the girl who receives the title along with Rokuro, is determined to exorcise all the Impurities in the world. The two find themselves wrapped up in more and more battles together as the Twin Star Exorcists, and as Rokuro watches Benio fight with the wish to become stronger, he's forced to face the weakness he's lived with ever since the Hiinatsuki Tragedy. Now that his eyes are turned toward the battle again, thanks to Benio, Rokuro makes up his mind to fight as an exorcist once more, and the Twin Star Exorcists take on the most powerful of Impurities together!",
+    "title" : "Kuromukuro",
+    "581" : {
+      "EP" : {
+        "04" : {
+          "day" : 05,
+          "hours" : "08",
+          "minutes" : 10,
+          "seconds" : 11
+        }
+      }
+    }
+  },
+  "Koutetsujou no Kabaneri" : {
+    "categories" : "Adventure, Fantasy, Magic",
+    "desciption" : "1",
+    "title" : "Koutetsujou no Kabaneri",
+    "upcoming" : {
+      "EP" : {
+        "04" : {
+          "day" : 05,
+          "hours" : "12",
+          "minutes" : 01,
+          "seconds" : 49
+        }
+      }
+    }
+  },
+  "Terra Formars: Revenge" : {
+    "categories" : "Action, Horror, Sci-Fi, Space",
+    "desciption" : "1   ",
+    "title" : "Terra Formars: Revenge",
+    "upcoming" : {
+      "EP" : {
+        "04" : {
+          "day" : 06,
+          "hours" : "12",
+          "minutes" : 08,
+          "seconds" : 34
+        }
+      }
+    }
+  }
+}

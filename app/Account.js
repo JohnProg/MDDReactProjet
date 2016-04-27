@@ -13,6 +13,7 @@ import Button from './components/Button';
 import Login from './Login';
 import Firebase from 'firebase';
 
+const TopBar = require('./components/TopBar')
 let app = new Firebase("https://anifan.firebaseio.com");
 
 class Account extends Component {
@@ -42,7 +43,7 @@ class Account extends Component {
 
     return (
       <View style={styles.container}>
-        <TopBar style={styles.topBar} name="TopBar" />
+        <TopBar style={styles.topBar} name="TopBar" navigator= {this.props.navigator}/>
         <View>
         {
           this.state.user &&

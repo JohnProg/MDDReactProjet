@@ -20,9 +20,9 @@ class TopBar extends Component {
   render() {
     return (
       <View style={styles.container}>
-            <MenuBarIcon name="MenuBarIcon" />
-            <Friends name="Friends" />
-            <MyAccount name="MyAccount" />
+            <MenuBarIcon name="MenuBarIcon" navigator= {this.props.navigator} />
+            <Friends name="Friends" navigator= {this.props.navigator} />
+            <MyAccount name="MyAccount" navigator= {this.props.navigator} />
       </View>
     );
   }

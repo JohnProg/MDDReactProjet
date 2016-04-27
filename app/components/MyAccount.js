@@ -14,18 +14,15 @@ import React, {
 } from 'react-native';
 
 class MyAccount extends Component {
-
     onPush(){
         this.props.navigator.push({
             id: 'Account'
         })
     }
-
-
   render() {
     return (
       <View style={styles.container}>
-        <TouchableHighlight onPress={this.onPush.bind(this)}>
+        <TouchableHighlight style={styles.button} onPress={this.onPush.bind(this)}>
             <Image style={styles.image} source={require('../assets/Account.png')} />
         </TouchableHighlight>
       </View>
@@ -38,7 +35,9 @@ const styles = StyleSheet.create({
     flex: 1,
     // paddingLeft: 20,
   },
-
+  button: {
+      flex: 1,
+  },
 });
 
 module.exports = MyAccount;
