@@ -38,13 +38,6 @@ class MainContent extends Component {
         }
     }
     componentWillMount(){
-        // api.getList().then((res) => {
-        //     this.setState({
-        //         dataSource: res
-        //     });
-        // })
-    }
-    componentDidMount() {
         this.getAniList(url);
     }
     //
@@ -53,38 +46,24 @@ class MainContent extends Component {
             <ListAnime aniList={aniList} onPress={() => {}} navigator= {this.props.navigator} />
           );
     }
-    animeDetails(){
-       this.props.navigator.push({
-         id: 'Desciption',
-         passProps: {
-             title: 'Title Example',
-             image: 'Image Example',
-             categories: 'Categories',
-             date: 'Date',
-             desciption: 'Desciption'
-         }
-       });
-     }
-
-     getAniList(url){
+    getAniList(url){
         url.on('value', (snap) => {
-          // get children as an array
-          var aniList = [];
-          snap.forEach((child) => {
-            aniList.push({
-              title: child.val().title,
-              categories: child.val().categories,
-              desciption: child.val().desciption,
-            //   upcoming: child.val().upcoming,
-              _key: child.key()
+            // get children as an array
+            var aniList = [];
+            snap.forEach((child) => {
+                aniList.push({
+                title: child.val().title,
+                categories: child.val().categories,
+                desciption: child.val().desciption,
+                //   upcoming: child.val().upcoming,
+                  _key: child.key()
+                });
             });
-          });
-          this.setState({
-            dataSource: this.state.dataSource.cloneWithRows(aniList)
-          });
-        });
-
-     }
+            this.setState({
+                dataSource: this.state.dataSource.cloneWithRows(aniList)
+            });
+      });
+}
 
     //  addList(){
     //      AsyncStorage.getItem('user_data').then((user_data))=>{
@@ -104,11 +83,6 @@ class MainContent extends Component {
                   // <Image source={require('../assets/Search.png')} />
                   onChangeText={(text) => this.setState({text})}
               />
-          </View>
-          <View style={styles.content}>
-              <TouchableHighlight onPress={ this.animeDetails.bind(this) }>
-                <Image style={styles.image} source={{uri:this.state.image}} />
-              </TouchableHighlight>
           </View>
           <View style={styles.content}>
               <ListView
