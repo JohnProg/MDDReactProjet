@@ -33,7 +33,7 @@ class MainContent extends Component {
             image: "",
             categories: "",
             date: "",
-            desciption: "",
+            description: "",
             dataSource: ds,
         }
     }
@@ -54,7 +54,7 @@ class MainContent extends Component {
                 aniList.push({
                 title: child.val().title,
                 categories: child.val().categories,
-                desciption: child.val().desciption,
+                description: child.val().desciption,
                 //   upcoming: child.val().upcoming,
                   _key: child.key()
                 });
@@ -63,26 +63,16 @@ class MainContent extends Component {
                 dataSource: this.state.dataSource.cloneWithRows(aniList)
             });
       });
-}
-
-    //  addList(){
-    //      AsyncStorage.getItem('user_data').then((user_data))=>{
-    //          var data;
-    //          var URL = new Firebase('https://workpunchdev.firebaseio.com/aniList/users/' + data.auth.uid);
-    //      }
-    //  }
-
-
+  }
   render() {
-      console.log("----return----",URL);
-
     return (
       <View style={styles.container}>
           <View style={styles.searchField}>
               <TextInput style={styles.textField}
-                  // <Image source={require('../assets/Search.png')} />
                   onChangeText={(text) => this.setState({text})}
+                  placeholder='Search'
               />
+              <Image source={require('../assets/Search.png')} style={{top: 3, right: 40}}/>
           </View>
           <View style={styles.content}>
               <ListView
@@ -108,9 +98,10 @@ const styles = StyleSheet.create({
       flexDirection: 'row',
       alignItems: 'flex-start',
       paddingTop: 20,
+      paddingLeft: 40,
   },
   content: {
-      flex: 1
+      flex: 11,
   },
   textField: {
       width: 250,
@@ -120,7 +111,7 @@ const styles = StyleSheet.create({
       backgroundColor: '#fff',
       borderRadius: 7,
       fontSize: 18,
-      paddingLeft: 10,
+      paddingLeft: 20,
   },
 });
 

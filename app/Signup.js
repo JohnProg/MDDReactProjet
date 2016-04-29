@@ -70,6 +70,12 @@ class Signup extends Component {
 
   }
 
+  back(){
+      this.props.navigator.pop({
+          id: 'Account'
+      })
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -100,6 +106,12 @@ class Signup extends Component {
                  Submit
              </Text>
          </TouchableHighlight>
+
+          <Button
+            text="Back"
+            onpress={this.back.bind(this)}
+            button_styles={[styles.button, styles.back]}
+            button_text_styles={styles.buttonText} />
       </View>
     );
   }
@@ -167,6 +179,10 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: '#fff',
   },
+  back: {
+      backgroundColor: 'grey',
+      borderColor: 'grey',
+  }
 });
 
 module.exports = Signup;

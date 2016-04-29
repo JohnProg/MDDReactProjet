@@ -33,7 +33,8 @@ class MyAccount extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // paddingLeft: 20,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   button: {
       flex: 1,

@@ -24,23 +24,23 @@ class ListAnime extends React.Component {
             image: "",
             categories: "",
             date: "",
-            desciption: "",
+            description: "",
         }
     }
     animeDetails(){
        this.props.navigator.push({
-         id: 'Desciption',
+         id: 'Description',
          passProps: {
              title: this.props.aniList.title,
              image: 'Image Example',
              categories: this.props.aniList.categories,
              date: this.props.aniList.upcoming,
-             desciption: this.props.aniList.desciption
+             description: this.props.aniList.description
          }
        });
      }
   render() {
-      console.log("----aniList----",this.props.aniList.title);
+      console.log(this.props.aniList.description);
     return (
       <TouchableHighlight onPress={ this.animeDetails.bind(this) }>
         <View style={styles.container}>
@@ -56,7 +56,8 @@ const styles = StyleSheet.create({
   apiText: {
       fontFamily: 'Chewy',
       color: '#fff',
-      margin: 10,
+      paddingTop: 15,
+      fontSize: 16,
   },
 });
 module.exports = ListAnime;

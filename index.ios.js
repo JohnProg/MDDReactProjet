@@ -19,16 +19,17 @@ var MyAccount = require('./app/components/MyAccount');
 var TopBar = require('./app/components/TopBar');
 var MenuBarIcon = require('./app/components/MenuBarIcon');
 
-var Desciption = require('./app/components/Desciption');
+var Description = require('./app/components/Description');
 
 
 class AniFan extends Component {
+
   render() {
     return (
     <Navigator
     style={styles.container}
         initialRoute={{
-            id: 'Home'
+            id: 'Login'
         }}
         renderScene = { this.navigatorRenderScene }
     />
@@ -47,8 +48,8 @@ class AniFan extends Component {
           case 'Signup':
               return (<Signup passProps={route.passProps} navigator={navigator} title="Signup" />);
 
-          case 'Desciption':
-              return (<Desciption passProps={route.passProps}  navigator={navigator} title="Desciption" />);
+          case 'Description':
+              return (<Description passProps={route.passProps}  navigator={navigator} title="Description" />);
 
           case 'Account':
               return (<Account passProps={route.passProps}  navigator={navigator} title="Account" />);

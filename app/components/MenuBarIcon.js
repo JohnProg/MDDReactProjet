@@ -14,15 +14,16 @@ import React, {
 } from 'react-native';
 
 class MenuBarIcon extends Component {
-    onPress(){
-        this.props.navigator.push({
-            id: 'MenuBar'
-        })
-    }
+    // onPress(){
+    //     this.props.navigator.push({
+    //         id: 'MenuBar'
+    //     })
+    // }
+    // onPress={this.onPress.bind(this)}
   render() {
     return (
       <View style={styles.container}>
-        <TouchableHighlight style={styles.button} onPress={this.onPress.bind(this)}>
+        <TouchableHighlight style={styles.button} >
             <Image style={styles.image} source={require('../assets/menu-icon.png')} />
         </TouchableHighlight>
       </View>
@@ -33,7 +34,8 @@ class MenuBarIcon extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // paddingLeft: 20,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   button: {
       flex: 1,
