@@ -43,14 +43,18 @@ class Account extends Component {
 
     return (
       <View style={styles.container}>
-        <TopBar style={styles.topBar} name="TopBar" navigator= {this.props.navigator}/>
         <View>
         {
           this.state.user &&
-            <View>
+            <View style={styles.email_container}>
+                <TopBar style={styles.topBar} name="TopBar" navigator= {this.props.navigator}/>
               <View>
                 <Text style={styles.email_text}>{this.state.user.password.email}</Text>
               </View>
+              <Image
+                style={styles.image}
+                source={{uri: this.state.user.password.profileImageURL}}
+              />
               <Button
                   text="Logout"
                   onpress={this.logout.bind(this)}
@@ -67,7 +71,7 @@ class Account extends Component {
     AsyncStorage.removeItem('user_data').then(() => {
       app.unauth();
       this.props.navigator.push({
-        component: Home
+        id: 'Home'
       });
     });
 
@@ -76,11 +80,18 @@ class Account extends Component {
 }
 
 const styles = StyleSheet.create({
+  container: {
+      flex: 1,
+      backgroundColor: '#343535',
+  },
   email_container: {
-    padding: 20
+      flex: 1,
+      backgroundColor: '#343535',
+      justifyContent: 'center',
   },
   email_text: {
-    fontSize: 18
+    fontSize: 18,
+    color: '#fff',
   }
 });
 
