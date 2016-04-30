@@ -29,7 +29,7 @@ class AniFan extends Component {
     <Navigator
     style={styles.container}
         initialRoute={{
-            id: 'Account'
+            id: 'Login'
         }}
         renderScene = { this.navigatorRenderScene }
     />
