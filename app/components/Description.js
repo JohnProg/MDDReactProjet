@@ -27,13 +27,18 @@ class Description extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <TopBar style={styles.topBar} name="TopBar"/>
-                <View style={styles.content}>
-                    <ScrollView
-                    ref={(scrollView) => { _scrollView = scrollView; }}
-                    automaticallyAdjustContentInsets={false}
-                    scrollEventThrottle={200}
-                    style={styles.scrollView}>
+                <View style={styles.topBar}>
+                    <Image source={require('../assets/arrow.png')} />
+                    <TouchableHighlight onPress={this.back.bind(this)}>
+                        <Text style={styles.back}> Back </Text>
+                    </TouchableHighlight>
+                </View>
+                <ScrollView
+                ref={(scrollView) => { _scrollView = scrollView; }}
+                automaticallyAdjustContentInsets={false}
+                scrollEventThrottle={200}
+                style={styles.scrollView}>
+                    <View style={styles.content}>
                         <Text style={styles.textHeading}>
                             {this.props.passProps.title}
                         </Text>
@@ -46,7 +51,10 @@ class Description extends Component {
                         </Text>
                         <Text style={styles.textH2}>Upcoming</Text>
                         <Text style={styles.textBody}>
-                            {this.props.passProps.date}
+                            {this.props.passProps.day}d:
+                            {this.props.passProps.hours}h:
+                            {this.props.passProps.minutes}m:
+                            {this.props.passProps.seconds}s
                         </Text>
                         <Text style={styles.textH2}>Description</Text>
                         <Text style={styles.textBody}>
@@ -55,11 +63,8 @@ class Description extends Component {
                         <TouchableOpacity onPress={this._onPressButton}>
                             <Text>ADD</Text>
                         </TouchableOpacity>
-                        <TouchableHighlight onPress={this.back.bind(this)}>
-                            <Text style={styles.back}> Back </Text>
-                        </TouchableHighlight>
-                    </ScrollView>
-                </View>
+                    </View>
+                </ScrollView>
             </View>
        );
     }
@@ -70,10 +75,15 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#343535',
   },
-  content: {
-      flex: 12,
-      justifyContent: 'center',
+  topBar: {
+      flex: 1,
+      backgroundColor: '#3D8491',
+      flexDirection: 'row',
       alignItems: 'center',
+  },
+  content: {
+      flex: 1,
+      justifyContent: 'center',
       backgroundColor: '#343535',
   },
   textHeading : {
@@ -91,6 +101,7 @@ const styles = StyleSheet.create({
       paddingLeft: 15,
       marginLeft: 20,
       fontWeight: 'bold',
+      alignItems: 'center',
   },
   textBody: {
       color: '#fff',
@@ -99,14 +110,22 @@ const styles = StyleSheet.create({
       paddingLeft: 15,
       paddingRight: 15,
       fontSize: 15,
+      alignItems: 'flex-start',
   },
   scrollView: {
+      flex: 12,
       backgroundColor: '#343535',
-      height: 300,
+      height: 200,
     },
-    back: {
+   back: {
+      flex: 1,
       color: '#fff',
-    }
+      fontSize: 20,
+      fontWeight: 'bold',
+      alignItems: 'center',
+      justifyContent: 'flex-end'
+  },
+
 });
 
 module.exports = Description;

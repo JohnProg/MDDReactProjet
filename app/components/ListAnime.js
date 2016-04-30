@@ -23,7 +23,10 @@ class ListAnime extends React.Component {
             title: "",
             image: "",
             categories: "",
-            date: "",
+            day: "",
+            hours: "",
+            minutes: "",
+            seconds: "",
             description: "",
         }
     }
@@ -34,7 +37,10 @@ class ListAnime extends React.Component {
              title: this.props.aniList.title,
              image: 'Image Example',
              categories: this.props.aniList.categories,
-             date: this.props.aniList.upcoming,
+             day: this.props.aniList.day,
+             hours: this.props.aniList.hours,
+             minutes: this.props.aniList.minutes,
+             seconds: this.props.aniList.seconds,
              description: this.props.aniList.description
          }
        });

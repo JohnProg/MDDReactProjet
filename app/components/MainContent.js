@@ -33,6 +33,9 @@ class MainContent extends Component {
             image: "",
             categories: "",
             date: "",
+            hours: "",
+            minutes: "",
+            seconds: "",
             description: "",
             dataSource: ds,
         }
@@ -54,8 +57,11 @@ class MainContent extends Component {
                 aniList.push({
                 title: child.val().title,
                 categories: child.val().categories,
-                description: child.val().desciption,
-                //   upcoming: child.val().upcoming,
+                description: child.val().description,
+                day: child.val().upcoming.days,
+                hours: child.val().upcoming.hours,
+                minutes: child.val().upcoming.minutes,
+                seconds: child.val().upcoming.seconds,
                   _key: child.key()
                 });
             });
